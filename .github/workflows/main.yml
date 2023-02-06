@@ -4,35 +4,37 @@ on:
   push:
   
 jobs:
-  print_date1_ubuntu:
-    name: Imprimir data 1 ubunto
+  print_date_ubuntu:
+    name: Imprimir datas ubunto
     runs-on: ubuntu-latest
+    
     steps:
       - name: Imprimir data 1 ubunto
         run: date
 
-  print_date2_windows:
-    name: Imprimir data 2 windows
+  print_date_windows:
+    name: Imprimir datas windows
     runs-on: windows-latest
+    
     steps:
       - name: Imprimir data 2 windows
         run: date
-        
-  print_date3_macos:
-    name: Imprimir data 3 macos
-    runs-on: macos-latest
-    steps:
-      - name: Imprimir data 3 macos
-        run: date
   
-  print_date4_ubunto:
-    name: Imprimir data 4 ubunto
-    runs-on: ubuntu-latest
+    print_date_macos:
+      name: Imprimir datas macos
+      runs-on: macos-latest
+    
+      steps:
+        - name: Imprimir data 3 macos
+          run: date
+
+    print_date_ubunto_final:
+      name: Imprimir datas ubunto
+      runs-on: ubunto-latest
+        needs:
+          - print_date_ubuntu
+          - print_date_windows
+          - print_date_macos
     steps:
       - name: Imprimir data 4 ubunto
         run: date
-        needs:
-          - print_date1_ubuntu
-          - print_date2_windows
-          - print_date3_macos
-  
