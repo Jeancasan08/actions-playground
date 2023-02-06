@@ -31,10 +31,11 @@ jobs:
     print_date_ubunto_final:
       name: Imprimir datas ubunto
       runs-on: ubunto-latest
-        needs:
-          - print_date_ubuntu
-          - print_date_windows
-          - print_date_macos
-    steps:
+      needs:
+        - print_date_ubuntu
+        - print_date_windows
+        - print_date_macos
+        
+      steps:
       - name: Imprimir data 4 ubunto
         run: date
