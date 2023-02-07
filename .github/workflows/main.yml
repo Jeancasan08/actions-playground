@@ -37,5 +37,5 @@ jobs:
       - print_date_macos
         
     steps:
-    - name: Imprimir data 4 ubunto
-      run: date
+      - name: Imprimir data 4 ubunto
+        run: date
