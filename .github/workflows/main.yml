@@ -29,7 +29,7 @@ jobs:
         run: date
 
   print_date_ubunto_final:
-    name: Imprimir data final ubunto
+    name: Imprimir data final
     runs-on: ubunto-latest
     needs:
       - print_date_ubuntu
