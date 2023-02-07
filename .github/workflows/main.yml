@@ -20,22 +20,22 @@ jobs:
       - name: Imprimir data 2 windows
         run: date
   
-    print_date_macos:
-      name: Imprimir datas macos
-      runs-on: macos-latest
+  print_date_macos:
+    name: Imprimir datas macos
+    runs-on: macos-latest
     
-      steps:
-        - name: Imprimir data 3 macos
-          run: date
-
-    print_date_ubunto_final:
-      name: Imprimir datas ubunto
-      runs-on: ubunto-latest
-      needs:
-        - print_date_ubuntu
-        - print_date_windows
-        - print_date_macos
-        
-      steps:
-      - name: Imprimir data 4 ubunto
+    steps:
+      - name: Imprimir data 3 macos
         run: date
+
+  print_date_ubunto_final:
+    name: Imprimir data final ubunto
+    runs-on: ubunto-latest
+    needs:
+      - print_date_ubuntu
+      - print_date_windows
+      - print_date_macos
+        
+    steps:
+    - name: Imprimir data 4 ubunto
+      run: date
